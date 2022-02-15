@@ -1,5 +1,5 @@
 # jfs-bank-app
-Finished. View the code <a href="https://github.com/txlocnguyen/jfs-bank-app/blob/main/src/com/bank_app/BankAccount.java">here</a>
+Finished. View the code <a href="https://github.com/txlocnguyen/jfs-bank-app/blob/main/src/com/bank_app/BankAccount.java">here</a><br>
 Practice exercise to build a simple bank app with Java. Current features:
 
 
