@@ -21,7 +21,7 @@ public class BankAccount {
     }
     public void withdrawFromChecking(double withdrawAmount){
         if(this.checkingBalance < withdrawAmount){
-            System.out.println("Not enough balance");
+            System.out.print("Not enough balance. ");
             if(this.checkingBalance + this.savingsBalance >= withdrawAmount){
                 System.out.println("Need to do a balance transfer in order to proceed with the withdrawal");
             }
@@ -32,7 +32,7 @@ public class BankAccount {
     }
     public void withdrawFromSavings(double withdrawAmount){
         if(this.savingsBalance < withdrawAmount){
-            System.out.println("Not enough balance");
+            System.out.print("Not enough balance. ");
             if(this.checkingBalance + this.savingsBalance >= withdrawAmount){
                 System.out.println("Need to do a balance transfer in order to proceed with the withdrawal");
             }
@@ -40,5 +40,31 @@ public class BankAccount {
             this.savingsBalance -= withdrawAmount;
             System.out.println("Successfully withdrew " + withdrawAmount + " from savings account. Remaining balance is " + this.savingsBalance);
         }
+    }
+    public void transferToChecking(double transferAmount){
+        if(this.savingsBalance < transferAmount){
+            System.out.println("Insufficient funds");
+        } else {
+            this.checkingBalance += transferAmount;
+            this.savingsBalance -= transferAmount;
+            System.out.println("Successfully transfer " + transferAmount + ". Current balance of checking account is " + this.checkingBalance + " and savings account is "+ this.savingsBalance);
+        }
+    }
+    public void transferToSavings(double transferAmount){
+        if(this.checkingBalance < transferAmount){
+            System.out.println("Insufficient funds");
+        } else {
+            this.checkingBalance -= transferAmount;
+            this.savingsBalance += transferAmount;
+            System.out.println("Successfully transfer " + transferAmount + ". Current balance of checking account is " + this.checkingBalance + " and savings account is "+ this.savingsBalance);
+        }
+    }
+    public void depositToChecking(double depositAmount){
+        this.checkingBalance += depositAmount;
+        System.out.println("Successfully deposit " + depositAmount + ". Current balance of checking account is " + this.checkingBalance);
+    }
+    public void depositToSavings(double depositAmount){
+        this.savingsBalance += depositAmount;
+        System.out.println("Successfully deposit " + depositAmount + ". Current balance of savings account is " + this.savingsBalance);
     }
 }
