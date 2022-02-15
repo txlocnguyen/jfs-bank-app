@@ -18,4 +18,10 @@ public class BankAccount {
     public double getSavingsBalance(){
         return this.savingsBalance;
     }
+    public void withdrawFromChecking(double withdrawAmount){
+        this.checkingBalance -= withdrawAmount;
+    }
+    public void withdrawFromSavings(double withdrawAmount){
+        this.savingsBalance -= withdrawAmount;
+    }
 }
